@@ -5,7 +5,9 @@ const products = require("./model/products");
 const sassMiddleware = require("node-sass-middleware");
 const expressLayouts = require("express-ejs-layouts");
 const app = express();
-const port = 8000
+require('dotenv').config()
+
+const port = process.env.PORT
 
 
 app.use(sassMiddleware({
