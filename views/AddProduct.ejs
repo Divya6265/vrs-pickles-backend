@@ -1,0 +1,71 @@
+<h1>Add New Product</h1>
+
+<form action="/products/create-product" method="post" class="add__product__form" enctype="multipart/form-data">
+    <div class="product__title">
+        <label for="title">Product Title</label>
+        <input type="text" name="title" class="title" required>
+    </div>
+    
+    <div class="product__category">
+        <label for="category">Product Category</label>
+        <select name="category" class="category">
+            <option value="Non veg">Non Veg</option>
+            <option value="veg">Veg</option>
+            <option value="Powder">Powder</option>
+            <option value="Snackz">Snackz</option>
+        </select>
+    </div>
+    <div class="product__price">
+        <label for="price">Price</label>
+    <input type="text" name="price" class="price" required>
+    </div>
+    <div class="product__description">
+        <label for="description">Description</label>
+    <textarea name="description" class="description" required></textarea>
+    </div>
+    <div class="upload__images">
+        <div class="upload__item" >
+            <img src="" alt="" class="product__image"  >
+            <input type="file" name="images" class="image" onchange="upload(0)" required >
+        </div>
+        <div class="upload__item" >
+            <img src="" alt="" class="product__image"  >
+            <input type="file" name="images" class="image" onchange="upload(1)" >
+        </div>
+        <div class="upload__item" >
+            <img src="" alt="" class="product__image"  >
+            <input type="file" name="images" class="image" onchange="upload(2)" >
+        </div>
+        <div class="upload__item" >
+            <img src="" alt="" class="product__image"  >
+            <input type="file" name="images" class="image" onchange="upload(3)" >
+        </div>
+        <div class="upload__item" >
+            <img src="" alt="" class="product__image"  >
+            <input type="file" name="images" class="image" onchange="upload(4)" >
+        </div>
+
+    </div>
+
+    <input type="submit" value="Add product" class="add-product ">
+
+</form>
+
+<script>
+    function upload(num) {
+        const img = Array.from(document.getElementsByClassName("product__image")) ;
+        const inputfile = Array.from(document.getElementsByClassName("image")) ;
+
+        // for (let i = 0; i < 5; i++) {
+            const file = inputfile[num].files[0];
+            console.log(file, "file");
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                img[num].src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+            img[num].style.display = "block";
+        // }
+
+    }
+</script>

@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/e5e27784ca.js" crossorigin="anonymous"></script></head>
+
+<body>
+    <div class="box__container">
+       
+            <%- include("_sidebar") %>
+    
+        <main>
+            <%- body %>
+        </main>
+    </div>
+    <%- script %>
+</body>
+
+</html>

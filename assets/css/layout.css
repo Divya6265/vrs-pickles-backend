@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", serif;
+}
+
+.box__container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 30%;
+}
+
+.sidebar__list {
+  height: 100%;
+  box-shadow: 0 10px 10px 1px #aaaaaa;
+  margin-right: 30px;
+  position: fixed;
+}
+
+.sidebar__list .add-to-queue {
+  color: purple;
+}
+
+.sidebar__list li {
+  background-color: #f6f2f2;
+  list-style-type: none;
+  padding: 15px 65px;
+  margin: 25px 10px;
+  border-radius: 5px;
+  display: flex;
+  width: 300px;
+  align-items: center;
+}
+
+.sidebar__list li:hover {
+  background-color: #dedddd;
+}
+
+.sidebar__list a {
+  text-decoration: none;
+  color: #000;
+}
+
+.sidebar__list .icon {
+  width: 40px;
+  margin-right: 10px;
+}
+
+main h1 {
+  text-align: center;
+  color: #4e4d4d;
+  margin-top: 30px;
+}
+
+.add__product__form {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  gap: 10px;
+  padding: 30px;
+}
+
+.add__product__form label {
+  font-size: 20px;
+  color: gray;
+}
+
+.add__product__form input {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.add__product__form input,
+.add__product__form textarea,
+.add__product__form select {
+  font-size: 20px;
+  border: #aaaaaa 1px solid;
+  border-radius: 5px;
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.add__product__form input:focus,
+.add__product__form textarea:focus,
+.add__product__form select:focus {
+  outline: none;
+}
+
+.add__product__form .product__title,
+.add__product__form .product__description,
+.add__product__form .upload__images {
+  grid-column: 1/ span 2;
+}
+
+.add__product__form .upload__images {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.add__product__form .upload__images .upload__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add__product__form .upload__images .upload__item .product__image {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  display: none;
+}
+
+.add__product__form .upload__images input {
+  border: none;
+  width: 77px;
+  font-size: 20px;
+  color: #aaaaaa;
+  font-weight: 500;
+  z-index: 999;
+}
+
+.add__product__form .upload__images input::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0ee";
+  font-size: 50px;
+  font-weight: 900;
+  opacity: .5;
+}
+
+.add__product__form .upload__images .product__image__disp,
+.add__product__form .upload__images .product__image {
+  width: 60px;
+  object-fit: cover;
+}
+
+.add__product__form .upload__images .product__image {
+  display: none;
+  border-radius: 5px;
+}
+
+.add__product__form .upload__images .upload__item {
+  position: relative;
+  display: grid;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  background-color: #edeaea;
+}
+
+.add__product__form .upload__images .upload__item .upload-icon {
+  font-size: 50px;
+  color: #aaaaaa;
+}
+
+.add__product__form .upload__images .upload__item .delete__image {
+  z-index: 999;
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  text-align: center;
+  background-color: #222;
+  color: #fff;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 2px;
+}
+
+.add__product__form .add-product {
+  background-color: #222;
+  color: #fff;
+}
+
+.add__product__form .add-product:hover,
+.add__product__form .add-product:focus {
+  opacity: .75;
+}
+
+.add__product__form textarea {
+  resize: none;
+}
+
+.Product__container .headings {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 150px repeat(4, 1fr) 100px 100px;
+  margin: 20px auto;
+}
+
+.Product__container h1 {
+  color: #4e4d4d;
+  text-align: center;
+}
+
+.Product__container span {
+  font-weight: 500;
+  font-size: 20px;
+  color: #aaaaaa;
+}
+
+.Product__container .product {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 150px repeat(4, 1fr) 100px 100px;
+  margin-top: 10px;
+  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.Product__container .product span {
+  color: #222;
+  font-weight: normal;
+}
+
+.Product__container .product .product__image {
+  border-radius: 5px;
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.Product__container .product .product__title {
+  text-transform: capitalize;
+}
+
+.Product__container .product .update__icon::before, .Product__container .product .delete__icon::before {
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+  font-weight: 900;
+  content: '\f044';
+  opacity: .5;
+  color: #222;
+}
+
+.Product__container .product .delete__icon::before {
+  content: '\f014';
+}
+
+#product__id {
+  display: none;
+}
+
+#image__display img {
+  display: block;
+}

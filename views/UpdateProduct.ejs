@@ -1,0 +1,102 @@
+<h1>Edit Product</h1>
+
+<form action="/products/update-product" method="post" class="add__product__form" enctype="multipart/form-data">
+    <div class="product__title">
+        <label for="title">Product Title</label>
+        <input type="text" name="title" class="title" value="<%= product.title %>" requir ed>
+    </div>
+    <input type="text" name="id" value="<%= product.id %>" id="product__id">
+
+    <div class="product__category">
+        <label for="category">Product Category</label>
+        <select name="category" class="category">
+            <option value="<%= product.title %>">
+                <%= product.category %>
+            </option>
+            <option value="Non veg">Non Veg</option>
+            <option value="veg">Veg</option>
+            <option value="Powder">Powder</option>
+            <option value="Snackz">Snackz</option>
+        </select>
+    </div>
+    <div class="product__price">
+        <label for="price">Price</label>
+        <input type="text" name="price" class="price" value="<%= product.price %>" required>
+    </div>
+    <div class="product__description">
+        <label for="description">Description</label>
+        <textarea name="description" class="description" required> <%= product.description %> </textarea>
+    </div>
+    <div class="upload__images" id="image__display">
+        <div class="upload__item" onclick="upload(0)">
+            <% if(product.images && product.images.length>0){%>
+                <img src="<%= product.images[0] %>" alt="" class="product__image">
+                <a href="/products/delete-image/?index=0&id=<%= product.id %>" class="delete__image">delete</a>
+
+                <%}else{%>
+                    <img src="" alt="" class="product__image">
+                    <%}%>
+                        <input type="file" name="images" class="image">
+        </div>
+
+        <div class="upload__item" onclick="upload(1)">
+            <% if(product.images && product.images.length>1){%>
+                <img src="<%= product.images[1] %>" alt="" class="product__image">
+                <a href="/products/delete-image/?index=1&id=<%= product.id %>" class="delete__image">delete</a>
+                <%}else{%>
+                    <img src="" alt="" class="product__image">
+                    <%}%>
+                        <input type="file" name="images" class="image" onchange="upload(1)">
+        </div>
+        <div class="upload__item" onclick="upload(2)">
+            <% if(product.images && product.images.length>2){%>
+                <img src="<%= product.images[2] %>" alt="" class="product__image">
+                <a href="/products/delete-image/?index=2&id=<%= product.id %>" class="delete__image">delete</a>
+                <%}else{%>
+                    <img src="" alt="" class="product__image">
+                    <%}%>
+                        <input type="file" name="images" class="image" onchange="upload(2)">
+        </div>
+        <div class="upload__item" onclick="upload(3)">
+            <% if(product.images && product.images.length>3){%>
+                <img src="<%= product.images[3] %>" alt="" class="product__image">
+                <a href="/products/delete-image/?index=3&id=<%= product.id %>" class="delete__image">delete</a>
+                <%}else{%>
+                    <img src="" alt="" class="product__image">
+                    <%}%>
+                        <input type="file" name="images" class="image" onchange="upload(3)">
+        </div>
+        <div class="upload__item" onclick="upload(4)">
+            <% if(product.images && product.images.length>4){%>
+                <img src="<%= product.images[4] %>" alt="" class="product__image">
+                <a href="/products/delete-image/?index=4&id=<%= product.id %>" class="delete__image">delete</a>
+                <%}else{%>
+                    <img src="" alt="" class="product__image">
+                    <%}%>
+                        <input type="file" name="images" class="image" onchange="upload(4)">
+        </div>
+
+    </div>
+
+    <input type="submit" value="Update product" class="add-product ">
+
+</form>
+
+<script>
+    function upload(num) {
+        const img = Array.from(document.getElementsByClassName("product__image"));
+        const inputfile = Array.from(document.getElementsByClassName("image"));
+        inputfile[num].addEventListener('change', () => {
+            const file = inputfile[num].files[0];
+            console.log(file, "file");
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                img[num].src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+            img[num].style.display = "block";
+        });
+
+
+    }
+</script>
