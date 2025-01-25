@@ -18,7 +18,7 @@ app.use(sassMiddleware({
 app.use(cors());
 
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'https://vrs-pickles-frontend.vercel.app/'
 }))
 app.use(expressLayouts)
 app.use(express.urlencoded({ extended: true }));
