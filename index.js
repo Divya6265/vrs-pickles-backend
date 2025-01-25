@@ -10,6 +10,15 @@ require('dotenv').config()
 
 const port = process.env.PORT
 
+
+app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
+
+
 // for sass files
 app.use(sassMiddleware({
     src: "./assets/scss",
@@ -19,7 +28,6 @@ app.use(sassMiddleware({
     prefix: "/css"
 }))
 // for comm with frontend
-app.use(cors());
 
 app.use(cors({
     origin: 'https://vrs-pickles-frontend.vercel.app/'
