@@ -12,7 +12,7 @@
 }
 
 .sidebar {
-  width: 30%;
+  width: 25%;
 }
 
 .sidebar__list {
@@ -49,6 +49,11 @@
 .sidebar__list .icon {
   width: 40px;
   margin-right: 10px;
+}
+
+main {
+  width: 80%;
+  padding-right: 30px;
 }
 
 main h1 {
