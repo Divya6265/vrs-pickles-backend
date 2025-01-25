@@ -30,7 +30,7 @@ app.use(sassMiddleware({
 // for comm with frontend
 
 app.use(cors({
-    origin: 'https://vrs-pickles-frontend.vercel.app/'
+    origin: 'https://vrs-pickles-frontend.vercel.app'
 }))
 
 
