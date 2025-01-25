@@ -28,6 +28,7 @@
     "mongoose": "^8.9.5",
     "multer": "^1.4.5-lts.1",
     "node-sass-middleware": "^1.1.0",
+    "nodemon": "^3.1.9",
     "vercel": "^39.3.0"
   }
 }
